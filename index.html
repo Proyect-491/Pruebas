@@ -64,9 +64,10 @@ nav h1 {
 /*   IMÁGENES DEL CATÁLOGO   */
 /* ========================= */
 .card img {
-    width:220px;
+    width:230px;           /* tamaño razonable */
     height:150px;
-    object-fit:cover;
+    object-fit:contain;    /* se ve ENTERA */
+    background:#00000033;  /* fondo suave para que no se corte */
     border-radius:10px;
     margin:auto;
     display:block;
@@ -114,22 +115,14 @@ nav h1 {
     animation:fade 0.4s ease;
 }
 
-@keyframes fade {
-    from {opacity:0;}
-    to {opacity:1;}
-}
-@keyframes fadeDown {
-    from {opacity:0; transform:translateY(-20px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
 /* ========================= */
-/*   IMÁGENES PÁGINAS INTERNAS */
+/*   IMÁGENES INTERNAS       */
 /* ========================= */
 .pagina img {
-    width:350px;
-    height:230px;
-    object-fit:cover;
+    width:380px;           /* tamaño perfecto */
+    height:250px;
+    object-fit:contain;    /* se ve ENTERA */
+    background:#00000033;
     border-radius:12px;
     margin:20px auto;
     display:block;
@@ -204,7 +197,20 @@ footer .social a:hover {
     text-shadow:0 0 10px #00aaff;
 }
 
+/* ========================= */
+/*        ANIMACIONES        */
+/* ========================= */
+@keyframes fade {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@keyframes fadeDown {
+    from {opacity:0; transform:translateY(-20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
 </style>
+
 
 
 <script>
