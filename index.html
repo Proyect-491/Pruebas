@@ -1,0 +1,311 @@
+<style>
+    body {
+        background:#0d0d0d;
+        color:white;
+        font-family:Arial;
+    }
+
+    nav {
+        background:#111;
+        padding:15px 30px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid #222;
+        position:sticky;
+        top:0;
+        z-index:999;
+    }
+    nav h1 {
+        color:#00aaff;
+        margin:0;
+        font-size:26px;
+    }
+
+    .catalogo {
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+        gap:25px;
+        padding:40px;
+    }
+
+    .card {
+        background:#111;
+        padding:20px;
+        border-radius:12px;
+        text-align:center;
+        border:1px solid #222;
+        transition:0.3s;
+    }
+    .card:hover {
+        transform:scale(1.05);
+        border-color:#00aaff;
+    }
+
+    .card img {
+        width:100%;
+        border-radius:10px;
+    }
+
+    .card h2 {
+        margin-top:15px;
+        color:#00ffaa;
+    }
+
+    .precio {
+        font-size:20px;
+        color:#ffcc00;
+        margin:10px 0;
+    }
+
+    .btn {
+        display:inline-block;
+        padding:10px 20px;
+        background:#00aaff;
+        color:white;
+        border-radius:6px;
+        text-decoration:none;
+        margin-top:10px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+    .btn:hover {
+        background:#0088cc;
+    }
+
+    .pagina {
+        display:none;
+        padding:40px;
+        max-width:900px;
+        margin:auto;
+        animation:fade 0.4s ease;
+    }
+
+    @keyframes fade {
+        from {opacity:0;}
+        to {opacity:1;}
+    }
+
+    .pagina img {
+        width:60%;
+        display:block;
+        margin:auto;
+        border-radius:10px;
+    }
+
+    .volver {
+        display:inline-block;
+        margin-bottom:20px;
+        padding:10px 20px;
+        background:#00ffaa;
+        color:black;
+        border-radius:6px;
+        text-decoration:none;
+        cursor:pointer;
+    }
+
+    h1.titulo {
+        text-align:center;
+        padding:30px;
+        color:#00aaff;
+        margin:0;
+    }
+
+    h3 {
+        color:#00ffaa;
+    }
+</style>
+
+<script>
+function ver(id){
+    document.getElementById("catalogo").style.display="none";
+    document.querySelectorAll(".pagina").forEach(p=>p.style.display="none");
+    document.getElementById(id).style.display="block";
+    window.scrollTo(0,0);
+}
+
+function volver(){
+    document.querySelectorAll(".pagina").forEach(p=>p.style.display="none");
+    document.getElementById("catalogo").style.display="grid";
+    window.scrollTo(0,0);
+}
+</script>
+
+<nav>
+    <h1>ProyectSystems</h1>
+</nav>
+
+<h1 class="titulo">Catálogo de Servicios</h1>
+
+<div id="catalogo" class="catalogo">
+
+    <div class="card">
+        <img src="https://i.imgur.com/yourbotsimage.jpg">
+        <h2>Bots Personalizados</h2>
+        <p class="precio">Desde 10€</p>
+        <div class="btn" onclick="ver('bots')">Ver más</div>
+    </div>
+
+    <div class="card">
+        <img src="https://i.imgur.com/yourpacksimage.jpg">
+        <h2>Packs Exclusivos</h2>
+        <p class="precio">Desde 10€</p>
+        <div class="btn" onclick="ver('packs')">Ver más</div>
+    </div>
+
+    <div class="card">
+        <img src="https://i.imgur.com/yourhostingimage.jpg">
+        <h2>Hosting & Mantenimiento</h2>
+        <p class="precio">Desde 4.99€/mes</p>
+        <div class="btn" onclick="ver('hosting')">Ver más</div>
+    </div>
+
+    <div class="card">
+        <img src="https://i.imgur.com/yourwebsimage.jpg">
+        <h2>Desarrollo Web</h2>
+        <p class="precio">Desde 39.99€</p>
+        <div class="btn" onclick="ver('webs')">Ver más</div>
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!--     PÁGINA: BOTS          -->
+<!-- ========================= -->
+<div id="bots" class="pagina">
+    <div class="volver" onclick="volver()">⬅ Volver</div>
+    <h1 class="titulo">Bots Personalizados</h1>
+    <img src="https://i.imgur.com/yourbotsimage.jpg">
+    <h2 style="text-align:center;color:#ffcc00;">Desde 10€</h2>
+
+    <h2>🤖 CONOCE NUESTROS BOTS</h2>
+    <p>Cada bot tiene una misión especial para hacer que tu servidor sea único, seguro, profesional y divertido.</p>
+
+    <h3>🛡️ Moderación y Seguridad Avanzada</h3>
+    <ul>
+        <li>Anti-raid</li>
+        <li>Anti-spam</li>
+        <li>Verificación automática</li>
+        <li>Filtros de palabras</li>
+    </ul>
+
+    <h3>🎉 Entretenimiento, Economía y Casino</h3>
+    <ul>
+        <li>Economía personalizada</li>
+        <li>Minijuegos</li>
+        <li>Cofres diarios</li>
+        <li>Niveles y experiencia</li>
+    </ul>
+
+    <h3>🎵 Música Premium 24/7</h3>
+    <ul>
+        <li>Spotify / YouTube</li>
+        <li>Audio HD</li>
+        <li>Ecualizador</li>
+    </ul>
+
+    <h3>🎫 Tickets y Verificación</h3>
+    <ul>
+        <li>Sistema de tickets</li>
+        <li>Transcripción automática</li>
+    </ul>
+</div>
+
+<!-- ========================= -->
+<!--     PÁGINA: PACKS         -->
+<!-- ========================= -->
+<div id="packs" class="pagina">
+    <div class="volver" onclick="volver()">⬅ Volver</div>
+    <h1 class="titulo">Packs Exclusivos</h1>
+    <img src="https://i.imgur.com/yourpacksimage.jpg">
+    <h2 style="text-align:center;color:#ffcc00;">Desde 10€</h2>
+
+    <h3>👑 PACK PLATINUM — 39.99€</h3>
+    <ul>
+        <li>Bot de Moderación Avanzada</li>
+        <li>Bot de Entretenimiento</li>
+        <li>Sistema de Tickets VIP</li>
+        <li>Configuración inicial incluida</li>
+    </ul>
+
+    <h3>🚀 PACK PRO-GAMER — 20.00€</h3>
+    <ul>
+        <li>Bot de Música Premium</li>
+        <li>Bot de Torneos</li>
+        <li>Sistema de niveles</li>
+    </ul>
+
+    <h3>🛠️ PACK ESENCIAL — 10.00€</h3>
+    <ul>
+        <li>Bot de bienvenida</li>
+        <li>Moderación básica</li>
+    </ul>
+
+    <h3>💎 ¿Por qué elegir un Pack?</h3>
+    <ul>
+        <li>Ahorras hasta un 30%</li>
+        <li>Soporte prioritario</li>
+        <li>Actualizaciones garantizadas</li>
+    </ul>
+</div>
+
+<!-- ========================= -->
+<!--     PÁGINA: HOSTING       -->
+<!-- ========================= -->
+<div id="hosting" class="pagina">
+    <div class="volver" onclick="volver()">⬅ Volver</div>
+    <h1 class="titulo">Hosting & Mantenimiento</h1>
+    <img src="https://i.imgur.com/yourhostingimage.jpg">
+    <h2 style="text-align:center;color:#ffcc00;">Desde 4.99€/mes</h2>
+
+    <h3>📦 HOSTING WEB DE ALTA VELOCIDAD</h3>
+    <ul>
+        <li>NVMe ultra rápido</li>
+        <li>99.9% uptime</li>
+        <li>Protección DDoS</li>
+    </ul>
+
+    <h3>PLANES:</h3>
+    <ul>
+        <li>Starter — 4.99€/mes</li>
+        <li>Business — 9.99€/mes</li>
+    </ul>
+
+    <h3>🛠️ MANTENIMIENTO WEB VIP — 9.99€/mes</h3>
+    <ul>
+        <li>Actualizaciones del sistema</li>
+        <li>Seguridad anti-hackeo</li>
+        <li>Backups diarios</li>
+        <li>Cambios menores incluidos</li>
+    </ul>
+</div>
+
+<!-- ========================= -->
+<!--     PÁGINA: WEBS          -->
+<!-- ========================= -->
+<div id="webs" class="pagina">
+    <div class="volver" onclick="volver()">⬅ Volver</div>
+    <h1 class="titulo">Desarrollo Web</h1>
+    <img src="https://i.imgur.com/yourwebsimage.jpg">
+    <h2 style="text-align:center;color:#ffcc00;">Desde 39.99€</h2>
+
+    <h3>📝 LANDING PAGE — 39.99€</h3>
+    <ul>
+        <li>One-page optimizada</li>
+        <li>Botones a redes</li>
+        <li>Diseño profesional</li>
+    </ul>
+
+    <h3>🏢 WEB CORPORATIVA — 49.99€</h3>
+    <ul>
+        <li>Varias secciones</li>
+        <li>Integración con Discord</li>
+    </ul>
+
+    <h3>⚙️ SISTEMAS A MEDIDA</h3>
+    <ul>
+        <li>Paneles web</li>
+        <li>Login</li>
+        <li>Programación personalizada</li>
+    </ul>
+</div>
