@@ -1,8 +1,5 @@
 <style>
 
-/* ========================= */
-/*        ESTILOS BASE       */
-/* ========================= */
 body {
     background:#0d0d0d;
     color:white;
@@ -12,9 +9,6 @@ body {
     overflow-x:hidden;
 }
 
-/* ========================= */
-/*        MENÚ SUPERIOR      */
-/* ========================= */
 nav {
     background:rgba(20,20,20,0.7);
     backdrop-filter:blur(10px);
@@ -31,29 +25,25 @@ nav {
 nav h1 {
     color:#00aaff;
     margin:0;
-    font-size:28px; /* MÁS PEQUEÑO */
+    font-size:28px; 
     font-weight:800;
     letter-spacing:1px;
     text-shadow:0 0 10px #00aaff88;
 }
 
-/* ========================= */
-/*        CATÁLOGO           */
-/* ========================= */
+
 .catalogo {
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)); /* MÁS GRANDE */
+    grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)); 
     gap:35px;
     padding:20px 40px;
 }
 
-/* ========================= */
-/*        CARD GLASS         */
-/* ========================= */
+
 .card {
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(12px);
-    padding:22px; /* MÁS GRANDE */
+    padding:22px; 
     border-radius:18px;
     text-align:center;
     border:1px solid rgba(255,255,255,0.1);
@@ -61,11 +51,11 @@ nav h1 {
     cursor:pointer;
     position:relative;
     overflow:hidden;
-    width:fit-content; /* SE AJUSTA AL CONTENIDO */
+    width:fit-content; 
     margin:auto;
 }
 
-/* Borde luminoso animado */
+
 .card::before {
     content:"";
     position:absolute;
@@ -97,12 +87,10 @@ nav h1 {
     box-shadow:0 0 25px #00aaff55;
 }
 
-/* ========================= */
-/*   IMÁGENES DEL CATÁLOGO   */
-/* ========================= */
+
 .card img {
-    width:320px;   /* MÁS GRANDE */
-    height:200px;  /* MÁS GRANDE */
+    width:320px;   
+    height:200px;  
     object-fit:contain;
     background:rgba(0,0,0,0.4);
     border-radius:14px;
@@ -119,18 +107,18 @@ nav h1 {
 .card h2 {
     margin-top:12px;
     color:#00ffaa;
-    font-size:24px; /* MÁS GRANDE */
+    font-size:24px; 
 }
 
 .precio {
-    font-size:19px; /* MÁS GRANDE */
+    font-size:19px; 
     color:#ffcc00;
     margin:8px 0;
 }
 
 .btn {
     display:inline-block;
-    padding:12px 26px; /* MÁS GRANDE */
+    padding:12px 26px; 
     background:#00aaff;
     color:white;
     border-radius:8px;
@@ -147,9 +135,7 @@ nav h1 {
     box-shadow:0 0 15px #0088cc;
 }
 
-/* ========================= */
-/*     PÁGINAS INTERNAS      */
-/* ========================= */
+
 .pagina {
     display:none;
     padding:30px;
@@ -157,9 +143,7 @@ nav h1 {
     margin:auto;
 }
 
-/* ========================= */
-/*   IMÁGENES INTERNAS       */
-/* ========================= */
+
 .pagina img {
     width:450px;
     height:280px;
@@ -173,9 +157,7 @@ nav h1 {
     box-shadow:0 0 25px #00aaff55;
 }
 
-/* ========================= */
-/*         VOLVER            */
-/* ========================= */
+
 .volver {
     display:inline-block;
     margin-bottom:20px;
@@ -193,9 +175,7 @@ nav h1 {
     box-shadow:0 0 10px #00ffaa;
 }
 
-/* ========================= */
-/*         FOOTER            */
-/* ========================= */
+
 footer {
     background:#111;
     padding:40px;
@@ -235,8 +215,6 @@ footer .social a:hover {
 
 </style>
 
-
-
 <script>
 function ver(id){
     document.getElementById("catalogo").style.display="none";
@@ -252,9 +230,6 @@ function volver(){
 }
 </script>
 
-
-
-
 <nav>
     <h1 style="
         margin:0 auto;
@@ -269,8 +244,6 @@ function volver(){
         ProyectSystems
     </h1>
 </nav>
-
-
 
 <div id="catalogo">
 
