@@ -26,7 +26,6 @@ nav {
     position:sticky;
     top:0;
     z-index:999;
-    animation:fadeDown 0.6s ease;
 }
 nav h1 {
     color:#00aaff;
@@ -41,7 +40,7 @@ nav h1 {
 .catalogo {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:35px;
+    gap:25px;
     padding:20px 40px;
 }
 
@@ -51,14 +50,16 @@ nav h1 {
 .card {
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(12px);
-    padding:18px;
-    border-radius:16px;
+    padding:15px;
+    border-radius:14px;
     text-align:center;
-    border:2px solid rgba(255,255,255,0.08);
-    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
     cursor:pointer;
     position:relative;
     overflow:hidden;
+    width: fit-content;
+    margin: auto;
 }
 
 /* Borde luminoso animado */
@@ -69,7 +70,7 @@ nav h1 {
     left:-2px;
     width:calc(100% + 4px);
     height:calc(100% + 4px);
-    border-radius:16px;
+    border-radius:14px;
     background:linear-gradient(120deg, #00aaff, #00ffaa, #ff00ff, #00aaff);
     background-size:300% 300%;
     animation:glow 6s linear infinite;
@@ -78,70 +79,66 @@ nav h1 {
     transition:0.4s;
 }
 
-/* Activación del borde */
 .card:hover::before {
     opacity:1;
 }
 
-/* Animación del borde */
 @keyframes glow {
     0% {background-position:0% 50%;}
     50% {background-position:100% 50%;}
     100% {background-position:0% 50%;}
 }
 
-/* Hover glass */
 .card:hover {
-    transform:scale(1.06);
-    box-shadow:0 0 25px #00aaff55;
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00aaff55;
 }
 
 /* ========================= */
 /*   IMÁGENES DEL CATÁLOGO   */
 /* ========================= */
 .card img {
-    width:270px;
-    height:170px;
+    width:240px;
+    height:150px;
     object-fit:contain;
     background:rgba(0,0,0,0.4);
-    border-radius:14px;
-    padding:10px;
-    border:2px solid rgba(255,255,255,0.1);
-    box-shadow:0 0 15px #00aaff33;
+    border-radius:12px;
+    padding:8px;
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 12px #00aaff33;
     transition:0.3s;
 }
 .card img:hover {
     transform:scale(1.05);
-    box-shadow:0 0 25px #00aaff66;
 }
 
 .card h2 {
-    margin-top:12px;
+    margin-top:10px;
     color:#00ffaa;
-    font-size:22px;
+    font-size:20px;
 }
 
 .precio {
-    font-size:18px;
+    font-size:16px;
     color:#ffcc00;
-    margin:8px 0;
+    margin:6px 0;
 }
 
 .btn {
     display:inline-block;
-    padding:10px 22px;
+    padding:8px 18px;
     background:#00aaff;
     color:white;
-    border-radius:8px;
+    border-radius:6px;
     text-decoration:none;
-    margin-top:10px;
+    margin-top:8px;
     cursor:pointer;
     transition:0.3s;
     font-weight:bold;
 }
 .btn:hover {
     background:#0088cc;
-    box-shadow:0 0 15px #0088cc;
+    box-shadow:0 0 10px #0088cc;
 }
 
 /* ========================= */
@@ -152,23 +149,22 @@ nav h1 {
     padding:30px;
     max-width:900px;
     margin:auto;
-    animation:fade 0.4s ease;
 }
 
 /* ========================= */
 /*   IMÁGENES INTERNAS       */
 /* ========================= */
 .pagina img {
-    width:450px;
-    height:280px;
+    width:380px;
+    height:240px;
     object-fit:contain;
     background:rgba(0,0,0,0.4);
-    border-radius:14px;
-    padding:12px;
-    border:2px solid rgba(255,255,255,0.1);
+    border-radius:12px;
+    padding:10px;
+    border:1px solid rgba(255,255,255,0.1);
     margin:20px auto;
     display:block;
-    box-shadow:0 0 25px #00aaff55;
+    box-shadow:0 0 20px #00aaff55;
 }
 
 /* ========================= */
@@ -230,32 +226,8 @@ footer .social a:hover {
     text-shadow:0 0 10px #00aaff;
 }
 
-/* ========================= */
-/*   ANIMACIÓN SCROLL UP     */
-/* ========================= */
-[data-anim] {
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.8s ease;
-}
-[data-anim].visible {
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ========================= */
-/*        ANIMACIONES        */
-/* ========================= */
-@keyframes fade {
-    from {opacity:0;}
-    to {opacity:1;}
-}
-@keyframes fadeDown {
-    from {opacity:0; transform:translateY(-20px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
 </style>
+
 
 <script>
 function ver(id){
@@ -270,16 +242,8 @@ function volver(){
     document.getElementById("catalogo").style.display="grid";
     window.scrollTo(0,0);
 }
-
-document.addEventListener("scroll", () => {
-    document.querySelectorAll("[data-anim]").forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50){
-            el.classList.add("visible");
-        }
-    });
-});
 </script>
+
 
 
 
@@ -287,12 +251,9 @@ document.addEventListener("scroll", () => {
     <h1>ProyectSystems</h1>
 </nav>
 
-<h1 class="titulo">Bots</h1>
-
-
 <div id="catalogo">
 
-    <div class="catalogo" style="margin-bottom:40px;">
+    <div class="catalogo">
 
         <div class="card" onclick="ver('bots')">
             <img src="https://i.postimg.cc/MTd7gCJc/db6100a2-9124-47f9-b565-82d00a8b8cb5.png">
@@ -307,12 +268,6 @@ document.addEventListener("scroll", () => {
             <p class="precio">Desde 10€</p>
             <div class="btn">Ver más</div>
         </div>
-
-    </div>
-
-    <h1 class="titulo" style="margin-top:10px;">Paginas Web</h1>
-
-    <div class="catalogo">
 
         <div class="card" onclick="ver('hosting')">
             <img src="https://i.postimg.cc/L8w0bZ3h/09e23503-763a-444a-8608-a6181b6a177d.png">
