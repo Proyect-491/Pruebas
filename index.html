@@ -1,17 +1,23 @@
 <style>
 
-
+/* ========================= */
+/*        ESTILOS BASE       */
+/* ========================= */
 body {
     background:#0d0d0d;
     color:white;
     font-family:Arial;
     margin:0;
     padding:0;
+    overflow-x:hidden;
 }
 
-
+/* ========================= */
+/*        MENÚ SUPERIOR      */
+/* ========================= */
 nav {
-    background:#111;
+    background:rgba(20,20,20,0.7);
+    backdrop-filter:blur(10px);
     padding:15px 30px;
     display:flex;
     justify-content:space-between;
@@ -29,49 +35,90 @@ nav h1 {
     font-weight:bold;
 }
 
-
+/* ========================= */
+/*        CATÁLOGO           */
+/* ========================= */
 .catalogo {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:25px;
+    gap:35px;
     padding:20px 40px;
-    animation:fade 0.6s ease;
 }
 
+/* ========================= */
+/*        CARD GLASS         */
+/* ========================= */
 .card {
-    background:#111;
-    padding:15px; 
-    border-radius:12px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    padding:18px;
+    border-radius:16px;
     text-align:center;
-    border:1px solid #222;
-    transition:0.3s;
+    border:2px solid rgba(255,255,255,0.08);
+    transition:0.4s;
     cursor:pointer;
-    box-shadow:0 0 0px #000;
+    position:relative;
+    overflow:hidden;
 }
+
+/* Borde luminoso animado */
+.card::before {
+    content:"";
+    position:absolute;
+    top:-2px;
+    left:-2px;
+    width:calc(100% + 4px);
+    height:calc(100% + 4px);
+    border-radius:16px;
+    background:linear-gradient(120deg, #00aaff, #00ffaa, #ff00ff, #00aaff);
+    background-size:300% 300%;
+    animation:glow 6s linear infinite;
+    z-index:-1;
+    opacity:0;
+    transition:0.4s;
+}
+
+/* Activación del borde */
+.card:hover::before {
+    opacity:1;
+}
+
+/* Animación del borde */
+@keyframes glow {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* Hover glass */
 .card:hover {
-    transform:scale(1.05);
-    border-color:#00aaff;
-    box-shadow:0 0 20px #00aaff55;
+    transform:scale(1.06);
+    box-shadow:0 0 25px #00aaff55;
 }
 
-
+/* ========================= */
+/*   IMÁGENES DEL CATÁLOGO   */
+/* ========================= */
 .card img {
-    width:260px;           
-    height:170px;          
-    object-fit:contain;    
-    background:#00000033;
-    border-radius:10px;
-    margin:auto;
-    display:block;
+    width:270px;
+    height:170px;
+    object-fit:contain;
+    background:rgba(0,0,0,0.4);
+    border-radius:14px;
+    padding:10px;
+    border:2px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 15px #00aaff33;
     transition:0.3s;
 }
 .card img:hover {
-    transform:scale(1.03);
+    transform:scale(1.05);
+    box-shadow:0 0 25px #00aaff66;
 }
 
 .card h2 {
     margin-top:12px;
     color:#00ffaa;
+    font-size:22px;
 }
 
 .precio {
@@ -82,20 +129,24 @@ nav h1 {
 
 .btn {
     display:inline-block;
-    padding:8px 18px;
+    padding:10px 22px;
     background:#00aaff;
     color:white;
-    border-radius:6px;
+    border-radius:8px;
     text-decoration:none;
-    margin-top:8px;
+    margin-top:10px;
     cursor:pointer;
     transition:0.3s;
+    font-weight:bold;
 }
 .btn:hover {
     background:#0088cc;
-    box-shadow:0 0 10px #0088cc;
+    box-shadow:0 0 15px #0088cc;
 }
 
+/* ========================= */
+/*     PÁGINAS INTERNAS      */
+/* ========================= */
 .pagina {
     display:none;
     padding:30px;
@@ -104,18 +155,25 @@ nav h1 {
     animation:fade 0.4s ease;
 }
 
-
+/* ========================= */
+/*   IMÁGENES INTERNAS       */
+/* ========================= */
 .pagina img {
-    width:420px;         
-    height:260px;
-    object-fit:contain;    
-    background:#00000033;
-    border-radius:12px;
+    width:450px;
+    height:280px;
+    object-fit:contain;
+    background:rgba(0,0,0,0.4);
+    border-radius:14px;
+    padding:12px;
+    border:2px solid rgba(255,255,255,0.1);
     margin:20px auto;
     display:block;
-    box-shadow:0 0 20px #00aaff55;
+    box-shadow:0 0 25px #00aaff55;
 }
 
+/* ========================= */
+/*         VOLVER            */
+/* ========================= */
 .volver {
     display:inline-block;
     margin-bottom:20px;
@@ -132,25 +190,15 @@ nav h1 {
     box-shadow:0 0 10px #00ffaa;
 }
 
-h1.titulo {
-    text-align:center;
-    padding:20px;
-    color:#00aaff;
-    margin:0;
-}
-
-h3 {
-    color:#00ffaa;
-}
-
-
+/* ========================= */
+/*         FOOTER            */
+/* ========================= */
 footer {
     background:#111;
     padding:40px;
     margin-top:60px;
     border-top:1px solid #222;
     text-align:center;
-    animation:fade 0.6s ease;
 }
 
 footer h2 {
@@ -182,7 +230,22 @@ footer .social a:hover {
     text-shadow:0 0 10px #00aaff;
 }
 
+/* ========================= */
+/*   ANIMACIÓN SCROLL UP     */
+/* ========================= */
+[data-anim] {
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.8s ease;
+}
+[data-anim].visible {
+    opacity:1;
+    transform:translateY(0);
+}
 
+/* ========================= */
+/*        ANIMACIONES        */
+/* ========================= */
 @keyframes fade {
     from {opacity:0;}
     to {opacity:1;}
@@ -193,9 +256,6 @@ footer .social a:hover {
 }
 
 </style>
-
-
-
 
 <script>
 function ver(id){
@@ -210,26 +270,17 @@ function volver(){
     document.getElementById("catalogo").style.display="grid";
     window.scrollTo(0,0);
 }
-    
-.card img {
-    width: 220px;          
-    height: 150px;         
-    object-fit: cover;     
-    margin: auto;
-    display: block;
-}
 
-
-.pagina img {
-    width: 350px;         
-    height: 230px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin: 20px auto;
-    box-shadow: 0 0 20px #00aaff55;
-}
-
+document.addEventListener("scroll", () => {
+    document.querySelectorAll("[data-anim]").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50){
+            el.classList.add("visible");
+        }
+    });
+});
 </script>
+
 
 
 <nav>
