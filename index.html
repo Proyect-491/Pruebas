@@ -1,119 +1,195 @@
 <style>
-    body {
-        background:#0d0d0d;
-        color:white;
-        font-family:Arial;
-    }
+/* ========================= */
+/*        ESTILOS BASE       */
+/* ========================= */
+body {
+    background:#0d0d0d;
+    color:white;
+    font-family:Arial;
+    margin:0;
+    padding:0;
+}
 
-    nav {
-        background:#111;
-        padding:15px 30px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        border-bottom:1px solid #222;
-        position:sticky;
-        top:0;
-        z-index:999;
-    }
-    nav h1 {
-        color:#00aaff;
-        margin:0;
-        font-size:26px;
-    }
+/* ========================= */
+/*        MENÚ SUPERIOR      */
+/* ========================= */
+nav {
+    background:#111;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:999;
+    animation:fadeDown 0.6s ease;
+}
+nav h1 {
+    color:#00aaff;
+    margin:0;
+    font-size:26px;
+    font-weight:bold;
+}
 
-    .catalogo {
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-        gap:25px;
-        padding:40px;
-    }
+/* ========================= */
+/*        CATÁLOGO           */
+/* ========================= */
+.catalogo {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:25px;
+    padding:40px;
+    animation:fade 0.6s ease;
+}
 
-    .card {
-        background:#111;
-        padding:20px;
-        border-radius:12px;
-        text-align:center;
-        border:1px solid #222;
-        transition:0.3s;
-    }
-    .card:hover {
-        transform:scale(1.05);
-        border-color:#00aaff;
-    }
+.card {
+    background:#111;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #222;
+    transition:0.3s;
+    cursor:pointer;
+    box-shadow:0 0 0px #000;
+}
+.card:hover {
+    transform:scale(1.05);
+    border-color:#00aaff;
+    box-shadow:0 0 20px #00aaff55;
+}
 
-    .card img {
-        width:100%;
-        border-radius:10px;
-    }
+.card img {
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+.card img:hover {
+    transform:scale(1.03);
+}
 
-    .card h2 {
-        margin-top:15px;
-        color:#00ffaa;
-    }
+.card h2 {
+    margin-top:15px;
+    color:#00ffaa;
+}
 
-    .precio {
-        font-size:20px;
-        color:#ffcc00;
-        margin:10px 0;
-    }
+.precio {
+    font-size:20px;
+    color:#ffcc00;
+    margin:10px 0;
+}
 
-    .btn {
-        display:inline-block;
-        padding:10px 20px;
-        background:#00aaff;
-        color:white;
-        border-radius:6px;
-        text-decoration:none;
-        margin-top:10px;
-        cursor:pointer;
-        transition:0.3s;
-    }
-    .btn:hover {
-        background:#0088cc;
-    }
+.btn {
+    display:inline-block;
+    padding:10px 20px;
+    background:#00aaff;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    margin-top:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn:hover {
+    background:#0088cc;
+    box-shadow:0 0 10px #0088cc;
+}
 
-    .pagina {
-        display:none;
-        padding:40px;
-        max-width:900px;
-        margin:auto;
-        animation:fade 0.4s ease;
-    }
+/* ========================= */
+/*     PÁGINAS INTERNAS      */
+/* ========================= */
+.pagina {
+    display:none;
+    padding:40px;
+    max-width:900px;
+    margin:auto;
+    animation:fade 0.4s ease;
+}
 
-    @keyframes fade {
-        from {opacity:0;}
-        to {opacity:1;}
-    }
+@keyframes fade {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@keyframes fadeDown {
+    from {opacity:0; transform:translateY(-20px);}
+    to {opacity:1; transform:translateY(0);}
+}
 
-    .pagina img {
-        width:60%;
-        display:block;
-        margin:auto;
-        border-radius:10px;
-    }
+.pagina img {
+    width:60%;
+    display:block;
+    margin:auto;
+    border-radius:10px;
+    box-shadow:0 0 20px #00aaff55;
+}
 
-    .volver {
-        display:inline-block;
-        margin-bottom:20px;
-        padding:10px 20px;
-        background:#00ffaa;
-        color:black;
-        border-radius:6px;
-        text-decoration:none;
-        cursor:pointer;
-    }
+.volver {
+    display:inline-block;
+    margin-bottom:20px;
+    padding:10px 20px;
+    background:#00ffaa;
+    color:black;
+    border-radius:6px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+.volver:hover {
+    background:#00ddaa;
+    box-shadow:0 0 10px #00ffaa;
+}
 
-    h1.titulo {
-        text-align:center;
-        padding:30px;
-        color:#00aaff;
-        margin:0;
-    }
+h1.titulo {
+    text-align:center;
+    padding:30px;
+    color:#00aaff;
+    margin:0;
+}
 
-    h3 {
-        color:#00ffaa;
-    }
+h3 {
+    color:#00ffaa;
+}
+
+/* ========================= */
+/*         FOOTER            */
+/* ========================= */
+footer {
+    background:#111;
+    padding:40px;
+    margin-top:60px;
+    border-top:1px solid #222;
+    text-align:center;
+    animation:fade 0.6s ease;
+}
+
+footer h2 {
+    color:#00aaff;
+    margin-bottom:10px;
+}
+
+footer p {
+    color:#ccc;
+    font-size:16px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+footer .social {
+    margin-top:20px;
+}
+
+footer .social a {
+    color:white;
+    margin:0 10px;
+    font-size:22px;
+    transition:0.3s;
+}
+
+footer .social a:hover {
+    color:#00aaff;
+    text-shadow:0 0 10px #00aaff;
+}
 </style>
 
 <script>
@@ -131,40 +207,46 @@ function volver(){
 }
 </script>
 
+<!-- ========================= -->
+<!--        MENÚ SUPERIOR      -->
+<!-- ========================= -->
 <nav>
     <h1>ProyectSystems</h1>
 </nav>
 
 <h1 class="titulo">Catálogo de Servicios</h1>
 
+<!-- ========================= -->
+<!--       CATÁLOGO MAIN       -->
+<!-- ========================= -->
 <div id="catalogo" class="catalogo">
 
-    <div class="card">
-        <img src="https://i.imgur.com/yourbotsimage.jpg">
+    <div class="card" onclick="ver('bots')">
+        <img src="URL_DE_TU_IMAGEN_BOTS">
         <h2>Bots Personalizados</h2>
         <p class="precio">Desde 10€</p>
-        <div class="btn" onclick="ver('bots')">Ver más</div>
+        <div class="btn">Ver más</div>
     </div>
 
-    <div class="card">
-        <img src="https://i.imgur.com/yourpacksimage.jpg">
+    <div class="card" onclick="ver('packs')">
+        <img src="URL_DE_TU_IMAGEN_PACKS">
         <h2>Packs Exclusivos</h2>
         <p class="precio">Desde 10€</p>
-        <div class="btn" onclick="ver('packs')">Ver más</div>
+        <div class="btn">Ver más</div>
     </div>
 
-    <div class="card">
-        <img src="https://i.imgur.com/yourhostingimage.jpg">
+    <div class="card" onclick="ver('hosting')">
+        <img src="URL_DE_TU_IMAGEN_HOSTING">
         <h2>Hosting & Mantenimiento</h2>
         <p class="precio">Desde 4.99€/mes</p>
-        <div class="btn" onclick="ver('hosting')">Ver más</div>
+        <div class="btn">Ver más</div>
     </div>
 
-    <div class="card">
-        <img src="https://i.imgur.com/yourwebsimage.jpg">
+    <div class="card" onclick="ver('webs')">
+        <img src="URL_DE_TU_IMAGEN_WEBS">
         <h2>Desarrollo Web</h2>
         <p class="precio">Desde 39.99€</p>
-        <div class="btn" onclick="ver('webs')">Ver más</div>
+        <div class="btn">Ver más</div>
     </div>
 
 </div>
@@ -175,11 +257,13 @@ function volver(){
 <div id="bots" class="pagina">
     <div class="volver" onclick="volver()">⬅ Volver</div>
     <h1 class="titulo">Bots Personalizados</h1>
-    <img src="https://i.imgur.com/yourbotsimage.jpg">
+    <img src="URL_DE_TU_IMAGEN_BOTS">
     <h2 style="text-align:center;color:#ffcc00;">Desde 10€</h2>
 
-    <h2>🤖 CONOCE NUESTROS BOTS</h2>
-    <p>Cada bot tiene una misión especial para hacer que tu servidor sea único, seguro, profesional y divertido.</p>
+    <p style="font-size:18px;line-height:1.6;">
+        En ProyectSystems desarrollamos bots totalmente personalizados, rápidos, seguros y adaptados a tu comunidad.
+        Desde sistemas avanzados de moderación hasta economías completas, música premium y paneles web.
+    </p>
 
     <h3>🛡️ Moderación y Seguridad Avanzada</h3>
     <ul>
@@ -217,8 +301,13 @@ function volver(){
 <div id="packs" class="pagina">
     <div class="volver" onclick="volver()">⬅ Volver</div>
     <h1 class="titulo">Packs Exclusivos</h1>
-    <img src="https://i.imgur.com/yourpacksimage.jpg">
+    <img src="URL_DE_TU_IMAGEN_PACKS">
     <h2 style="text-align:center;color:#ffcc00;">Desde 10€</h2>
+
+    <p style="font-size:18px;line-height:1.6;">
+        Nuestros packs están diseñados para ofrecerte lo mejor al mejor precio.
+        Perfectos para comunidades que quieren crecer rápido con sistemas profesionales.
+    </p>
 
     <h3>👑 PACK PLATINUM — 39.99€</h3>
     <ul>
@@ -240,13 +329,6 @@ function volver(){
         <li>Bot de bienvenida</li>
         <li>Moderación básica</li>
     </ul>
-
-    <h3>💎 ¿Por qué elegir un Pack?</h3>
-    <ul>
-        <li>Ahorras hasta un 30%</li>
-        <li>Soporte prioritario</li>
-        <li>Actualizaciones garantizadas</li>
-    </ul>
 </div>
 
 <!-- ========================= -->
@@ -255,8 +337,13 @@ function volver(){
 <div id="hosting" class="pagina">
     <div class="volver" onclick="volver()">⬅ Volver</div>
     <h1 class="titulo">Hosting & Mantenimiento</h1>
-    <img src="https://i.imgur.com/yourhostingimage.jpg">
+    <img src="URL_DE_TU_IMAGEN_HOSTING">
     <h2 style="text-align:center;color:#ffcc00;">Desde 4.99€/mes</h2>
+
+    <p style="font-size:18px;line-height:1.6;">
+        Tu web o bot necesita estabilidad, velocidad y seguridad.
+        Nuestros servidores NVMe garantizan el mejor rendimiento posible.
+    </p>
 
     <h3>📦 HOSTING WEB DE ALTA VELOCIDAD</h3>
     <ul>
@@ -286,8 +373,13 @@ function volver(){
 <div id="webs" class="pagina">
     <div class="volver" onclick="volver()">⬅ Volver</div>
     <h1 class="titulo">Desarrollo Web</h1>
-    <img src="https://i.imgur.com/yourwebsimage.jpg">
+    <img src="URL_DE_TU_IMAGEN_WEBS">
     <h2 style="text-align:center;color:#ffcc00;">Desde 39.99€</h2>
+
+    <p style="font-size:18px;line-height:1.6;">
+        Creamos páginas web modernas, rápidas, seguras y totalmente personalizadas.
+        Perfectas para negocios, comunidades, marcas personales y proyectos profesionales.
+    </p>
 
     <h3>📝 LANDING PAGE — 39.99€</h3>
     <ul>
@@ -309,3 +401,23 @@ function volver(){
         <li>Programación personalizada</li>
     </ul>
 </div>
+
+<!-- ========================= -->
+<!--         FOOTER            -->
+<!-- ========================= -->
+<footer>
+    <h2>ProyectSystems — Desarrollo Profesional</h2>
+    <p>
+        Bots personalizados, páginas web, hosting, mantenimiento y sistemas avanzados.
+        Todo lo que necesitas para llevar tu comunidad o negocio al siguiente nivel.
+        Calidad, velocidad y soporte profesional garantizado.
+    </p>
+
+    <div class="social">
+        <a href="#">Discord</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </div>
+
+    <p style="margin-top:20px;color:#777;">© 2026 ProyectSystems — Todos los derechos reservados</p>
+</footer>
