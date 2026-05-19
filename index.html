@@ -1,8 +1,6 @@
 <style>
 
-/* ========================= */
-/*        ESTILOS BASE       */
-/* ========================= */
+
 body {
     background:#0d0d0d;
     color:white;
@@ -11,9 +9,7 @@ body {
     padding:0;
 }
 
-/* ========================= */
-/*        MENÚ SUPERIOR      */
-/* ========================= */
+
 nav {
     background:#111;
     padding:15px 30px;
@@ -33,9 +29,7 @@ nav h1 {
     font-weight:bold;
 }
 
-/* ========================= */
-/*        CATÁLOGO           */
-/* ========================= */
+
 .catalogo {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
@@ -46,7 +40,7 @@ nav h1 {
 
 .card {
     background:#111;
-    padding:15px; /* MÁS AJUSTADO */
+    padding:15px; 
     border-radius:12px;
     text-align:center;
     border:1px solid #222;
@@ -60,13 +54,11 @@ nav h1 {
     box-shadow:0 0 20px #00aaff55;
 }
 
-/* ========================= */
-/*   IMÁGENES DEL CATÁLOGO   */
-/* ========================= */
+
 .card img {
-    width:260px;           /* MÁS GRANDE */
-    height:170px;          /* MÁS GRANDE */
-    object-fit:contain;    /* SE VE ENTERA */
+    width:260px;           
+    height:170px;          
+    object-fit:contain;    
     background:#00000033;
     border-radius:10px;
     margin:auto;
@@ -104,9 +96,6 @@ nav h1 {
     box-shadow:0 0 10px #0088cc;
 }
 
-/* ========================= */
-/*     PÁGINAS INTERNAS      */
-/* ========================= */
 .pagina {
     display:none;
     padding:30px;
@@ -115,13 +104,11 @@ nav h1 {
     animation:fade 0.4s ease;
 }
 
-/* ========================= */
-/*   IMÁGENES INTERNAS       */
-/* ========================= */
+
 .pagina img {
-    width:420px;           /* MÁS GRANDE */
+    width:420px;         
     height:260px;
-    object-fit:contain;    /* SE VE ENTERA */
+    object-fit:contain;    
     background:#00000033;
     border-radius:12px;
     margin:20px auto;
@@ -156,9 +143,7 @@ h3 {
     color:#00ffaa;
 }
 
-/* ========================= */
-/*         FOOTER            */
-/* ========================= */
+
 footer {
     background:#111;
     padding:40px;
@@ -197,9 +182,7 @@ footer .social a:hover {
     text-shadow:0 0 10px #00aaff;
 }
 
-/* ========================= */
-/*        ANIMACIONES        */
-/* ========================= */
+
 @keyframes fade {
     from {opacity:0;}
     to {opacity:1;}
@@ -227,19 +210,18 @@ function volver(){
     document.getElementById("catalogo").style.display="grid";
     window.scrollTo(0,0);
 }
-    /* IMÁGENES DEL CATÁLOGO */
+    
 .card img {
-    width: 220px;          /* tamaño razonable */
-    height: 150px;         /* proporción controlada */
-    object-fit: cover;     /* recorta sin deformar */
-    border-radius: 10px;
+    width: 220px;          
+    height: 150px;         
+    object-fit: cover;     
     margin: auto;
     display: block;
 }
 
-/* IMÁGENES DE LAS PÁGINAS INTERNAS */
+
 .pagina img {
-    width: 350px;          /* tamaño perfecto */
+    width: 350px;         
     height: 230px;
     object-fit: cover;
     border-radius: 12px;
@@ -254,7 +236,7 @@ function volver(){
     <h1>ProyectSystems</h1>
 </nav>
 
-<h1 class="titulo">Catálogo de Servicios</h1>
+<h1 class="titulo">Bots</h1>
 
 
 <div id="catalogo">
@@ -277,7 +259,7 @@ function volver(){
 
     </div>
 
-    <h1 class="titulo" style="margin-top:10px;">Servicios Adicionales</h1>
+    <h1 class="titulo" style="margin-top:10px;">Paginas Web</h1>
 
     <div class="catalogo">
 
